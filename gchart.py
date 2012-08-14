@@ -88,7 +88,7 @@ class GoogleChartWrapper(object):
                 
                 def chart_factory(**options):
                     return type(name, (GoogleChart,), {'class_options': options, 'package': package_name, 'name': chart_name})
-                chart.__name__ = name
+                chart_factory.__name__ = name
                 
                 return chart_factory
         return PackageWrapper()
